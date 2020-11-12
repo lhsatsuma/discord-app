@@ -1,0 +1,15 @@
+{
+    "name": "lhsatsuma/discord-app",
+    "description": "An unofficial way to extends DiscordPHP",
+    "require": {
+        "team-reflex/discord-php": "5.0.12"
+    },
+    "autoload": {
+		"files": [
+			"src/DiscordApp/utils.php"
+		],
+        "psr-4": {
+            "DiscordApp\\": "src/DiscordApp"
+        }
+    }
+}
