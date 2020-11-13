@@ -1,7 +1,9 @@
 <?php
 $GLOBALS['primaryCommandforca'] = $discord->registerCommand('forca', function ($message) {
 	$msg = '**Jogo da Forca!**';
-	
+
+	$forca = new DiscordApp\Bean\Forca();
+
 	$embed = [
 		'author' => [
 			'name' => $message->author->username,
@@ -9,7 +11,7 @@ $GLOBALS['primaryCommandforca'] = $discord->registerCommand('forca', function ($
 		],
 		'title' => 'Comandos do "Jogo da Forca"',
 		'thumbnail' => [
-			'url' => 'http://www.cjdinfo.com.br/images/diversao/forca/vazia.png',
+			'url' => $forca->options['thumb'],
 		],
 		'description' => "",
 		'color' => DiscordApp\ColorsEmbed::get('GREEN'),

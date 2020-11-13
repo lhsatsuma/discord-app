@@ -1,5 +1,8 @@
 <?php
 $GLOBALS['primaryCommandforca']->registerSubCommand('letra', function ($message, $params) {
+	
+	$forca = new DiscordApp\Bean\Forca();
+		
 	$msg = '**Jogo da Forca!**';
 	
 	$embed = [
@@ -11,7 +14,7 @@ $GLOBALS['primaryCommandforca']->registerSubCommand('letra', function ($message,
 		'description' => "",
 		'color' => DiscordApp\ColorsEmbed::get('GREEN'),
 		'thumbnail' => [
-			'url' => 'http://www.cjdinfo.com.br/images/diversao/forca/vazia.png',
+			'url' => $forca->options['thumb'],
 		],
 		'fields' => [],
 	];
@@ -20,7 +23,6 @@ $GLOBALS['primaryCommandforca']->registerSubCommand('letra', function ($message,
 		$params[0]
 		&& strlen(preg_replace("/[^A-Za-z0-9?! ]/","", $params[0])) == 1
 	){
-		$forca = new DiscordApp\Bean\Forca();
 		$forca->user_id = $message->author->id;
 		$forca->selectActive();
 		

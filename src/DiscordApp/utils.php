@@ -66,6 +66,25 @@ function clear_string($string)
 	return $string;
 }
 
+function default_embed($title = '', $message = null)
+{
+	$embed = [
+		'author' => [],
+		'title' => $title,
+		'description' => '',
+		'thumbnail' => [],
+		'fields' => [],
+	];
+	
+	if(!is_null($message)){
+		$embed['author']['name'] = $message->author->user->username;
+		$embed['author']['icon_url'] = $message->author->user->avatar;
+		
+	}
+	
+	return $embed;
+}
+
 function ClearRegex()
 {
 return <<<'END'

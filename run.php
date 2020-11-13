@@ -21,6 +21,7 @@ global $discord;
 $discord->on('ready', function($discord) {
 	global $bot_cfg;
 	
+	return;
 	//Send ready message into channel of #server-commands
 	$channel = $discord->getChannel((int)$bot_cfg['admin_channel_id']);
 	$guild = $discord->guilds->offsetGet($channel->guild_id);

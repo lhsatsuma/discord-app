@@ -13,11 +13,14 @@ class Forca extends Base{
 	public $palavra = '';
 	public $win = 0;
 	public $chances_left = 6;
-	public $letras = array();
-	public $dicas = array();
-	public $guessed = array();
-	public $palavraInfo = array();
+	public $letras = [];
+	public $dicas = [];
+	public $guessed = [];
+	public $palavraInfo = [];
 	public $fields = ['id', 'date_entered', 'date_modified', 'user_id', 'last_msg_id', 'status', 'palavra', 'win', 'letras', 'guessed', 'dicas'];
+	public $options = [
+		'thumb' => 'http://www.cjdinfo.com.br/images/diversao/forca/vazia.png',	
+	];
 	protected $dbh;
 	
 	public const white_space = '🔳';
